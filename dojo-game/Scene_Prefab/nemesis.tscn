@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://4qigrbu26gqk"]
+
+[ext_resource type="Script" uid="uid://2qu2la6pewys" path="res://Script/nemesis.gd" id="1_bsqba"]
+[ext_resource type="Texture2D" uid="uid://iyyitjq1smid" path="res://Asset/Asset/polilla.png" id="1_xetfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhemn"]
+
+[node name="nemesis" type="CharacterBody2D" unique_id=1426535851]
+script = ExtResource("1_bsqba")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=295001340]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_xetfi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1083112232]
+shape = SubResource("RectangleShape2D_yhemn")

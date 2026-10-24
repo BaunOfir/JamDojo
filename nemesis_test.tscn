@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dep5lri5djkxc"]
+
+[ext_resource type="Script" uid="uid://bv2icqci81wv1" path="res://protagonista.gd" id="1_0nafr"]
+[ext_resource type="Texture2D" uid="uid://bvj2b6856g41a" path="res://assets/jugador.png" id="2_7m0md"]
+[ext_resource type="Script" uid="uid://dijwsf0wy8d1b" path="res://nemesis.gd" id="3_d6q0i"]
+[ext_resource type="Texture2D" uid="uid://dnpef5ljhlwoc" path="res://assets/polilla.png" id="4_7m0md"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhemn"]
+size = Vector2(28, 38)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yhemn"]
+radius = 758.3192
+
+[node name="NemesisTest" type="Node2D" unique_id=274976245]
+scale = Vector2(0.5, 0.5)
+
+[node name="Protagonista" type="CharacterBody2D" parent="." unique_id=1968342081 groups=["Player"]]
+position = Vector2(1034, 622)
+script = ExtResource("1_0nafr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Protagonista" unique_id=874993560]
+scale = Vector2(0.5, 0.568)
+texture = ExtResource("2_7m0md")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=719777778]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_yhemn")
+
+[node name="ZonaEnemigo" type="Area2D" parent="Protagonista" unique_id=1780529215]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista/ZonaEnemigo" unique_id=1040105153]
+shape = SubResource("CircleShape2D_yhemn")
+
+[node name="Nemesis" type="CharacterBody2D" parent="." unique_id=1594187207 groups=["Player"]]
+position = Vector2(1416, 642)
+script = ExtResource("3_d6q0i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nemesis" unique_id=950696446]
+modulate = Color(1, 0.01999998, 0.01999998, 1)
+scale = Vector2(0.5, 0.568)
+texture = ExtResource("4_7m0md")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nemesis" unique_id=276924683]
+shape = SubResource("RectangleShape2D_yhemn")

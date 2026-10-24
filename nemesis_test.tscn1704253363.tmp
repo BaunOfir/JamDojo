@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dep5lri5djkxc"]
+
+[ext_resource type="Script" uid="uid://bv2icqci81wv1" path="res://protagonista.gd" id="1_0nafr"]
+[ext_resource type="Texture2D" uid="uid://boo16plelucvs" path="res://icon.svg" id="2_d6q0i"]
+[ext_resource type="Script" uid="uid://dijwsf0wy8d1b" path="res://nemesis.gd" id="3_d6q0i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhemn"]
+size = Vector2(64, 74)
+
+[node name="NemesisTest" type="Node2D" unique_id=274976245]
+
+[node name="Protagonista" type="CharacterBody2D" parent="." unique_id=1968342081]
+position = Vector2(120, 61)
+script = ExtResource("1_0nafr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Protagonista" unique_id=874993560]
+scale = Vector2(0.5, 0.568)
+texture = ExtResource("2_d6q0i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=719777778]
+shape = SubResource("RectangleShape2D_yhemn")
+
+[node name="Nemesis" type="CharacterBody2D" parent="." unique_id=1594187207]
+position = Vector2(651, 267)
+script = ExtResource("3_d6q0i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nemesis" unique_id=950696446]
+modulate = Color(1, 0.01999998, 0.01999998, 1)
+scale = Vector2(0.5, 0.568)
+texture = ExtResource("2_d6q0i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nemesis" unique_id=276924683]
+shape = SubResource("RectangleShape2D_yhemn")

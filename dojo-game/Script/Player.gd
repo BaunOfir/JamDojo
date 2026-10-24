@@ -4,6 +4,7 @@ const VELOCIDAD = 700
 const ACELERACION = 2000
 var cantidad_aceite=0
 var prendido = false
+@onready var zona_enemigo: Area2D = $ZonaEnemigo
 
 @onready var barraluz = $barraluz
 @onready var aduken = $aduken
@@ -12,6 +13,7 @@ func _ready() -> void:
 	barraluz.max_value = 100
 	barraluz.value = 100
 	aduken.energy = 0
+	zona_enemigo.body_entered.connect(_on_zona_enemigo_body_entered)
 
 func _physics_process(delta: float) -> void:
 	
@@ -49,3 +51,8 @@ func _physics_process(delta: float) -> void:
 		)
 
 	move_and_slide()
+
+
+func _on_zona_enemigo_body_entered(body: Node2D) -> void:
+	if body.has_method("set_player_area"):
+		body.set_player_area(zona_enemigo)

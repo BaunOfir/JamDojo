@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://boa0esyiyjv2r" path="res://Scene_Prefab/character_body_2d.tscn" id="1_jxis1"]
 [ext_resource type="Texture2D" uid="uid://cmhkc6iol3lbh" path="res://Asset/Asset/PNG/Default size/Ground/ground_01.png" id="2_kgmde"]
 [ext_resource type="PackedScene" uid="uid://bgmr81r1v78cq" path="res://Scene_Prefab/Aceite.tscn" id="3_j4t1y"]
+[ext_resource type="Script" uid="uid://bbnlq06pwigll" path="res://Scene_Prefab/nemesis.gd" id="4_d3u1b"]
+[ext_resource type="PackedScene" uid="uid://4qigrbu26gqk" path="res://Scene_Prefab/nemesis.tscn" id="4_l0yyv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4t1y"]
 texture = ExtResource("2_kgmde")
@@ -35,7 +37,11 @@ tile_map_data = PackedByteArray("AAD5////AAAAAAAAAAD6////AAAAAAAAAAD7////AAAAAAA
 tile_set = SubResource("TileSet_sp843")
 
 [node name="CharacterBody2D" parent="." unique_id=1094450706 instance=ExtResource("1_jxis1")]
-position = Vector2(309, 139)
+position = Vector2(685, 249)
+
+[node name="Nemesis" parent="." unique_id=1638249811 instance=ExtResource("4_l0yyv")]
+position = Vector2(487, 338)
+script = ExtResource("4_d3u1b")
 
 [node name="Area2D" parent="." unique_id=1802136239 instance=ExtResource("3_j4t1y")]
 position = Vector2(472, 150)
