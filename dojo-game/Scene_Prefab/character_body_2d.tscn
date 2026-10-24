@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://boa0esyiyjv2r"]
+
+[ext_resource type="Script" uid="uid://cvne1maoqs81b" path="res://Script/Player.gd" id="1_4e5sf"]
+[ext_resource type="Texture2D" uid="uid://boo16plelucvs" path="res://icon.svg" id="2_3bnm8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sp843"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1094450706 groups=["Player"]]
+script = ExtResource("1_4e5sf")
+
+[node name="aduken" type="PointLight2D" parent="." unique_id=1173950349]
+position = Vector2(-4, 3)
+scale = Vector2(2.0400014, 2.0400014)
+energy = 2.2
+texture = ExtResource("2_3bnm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328010388]
+texture = ExtResource("2_3bnm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=195348196]
+shape = SubResource("CircleShape2D_sp843")
+
+[node name="barraluz" type="ProgressBar" parent="." unique_id=992432341]
+offset_left = -10.0
+offset_top = -113.0
+offset_right = -6.0
+offset_bottom = -86.0
+max_value = 1.0
+value = 1.0
+
+[node name="Timer_luz" type="Timer" parent="." unique_id=1324237238]

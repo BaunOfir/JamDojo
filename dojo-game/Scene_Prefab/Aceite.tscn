@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bgmr81r1v78cq"]
+
+[ext_resource type="Script" uid="uid://d30u4ke5mmp78" path="res://Script/acite.gd" id="1_qy5c8"]
+[ext_resource type="Texture2D" uid="uid://bqyk0nh8igrva" path="res://Asset/Asset/PNG/Default size/Crates/crate_03.png" id="2_qy5c8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp843"]
+
+[node name="Area2D" type="Area2D" unique_id=1802136239]
+script = ExtResource("1_qy5c8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1052121640]
+texture = ExtResource("2_qy5c8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1951318092]
+shape = SubResource("RectangleShape2D_sp843")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
