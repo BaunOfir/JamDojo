@@ -37,6 +37,16 @@ value = 1.0
 [node name="Timer_luz" type="Timer" parent="." unique_id=1324237238]
 
 [node name="ZonaEnemigo" type="Area2D" parent="." unique_id=2017065116]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaEnemigo" unique_id=703559204]
 shape = SubResource("CircleShape2D_4d3sc")
+
+[node name="Barra_cordura" type="ProgressBar" parent="." unique_id=289050653]
+offset_left = -21.0
+offset_top = -185.0
+offset_right = -17.0
+offset_bottom = -158.0
+
+[connection signal="timeout" from="Timer_luz" to="." method="_on_timer_luz_timeout"]

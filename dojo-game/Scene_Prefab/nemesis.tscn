@@ -5,7 +5,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhemn"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsqba"]
+size = Vector2(115, 110)
+
 [node name="nemesis" type="CharacterBody2D" unique_id=1426535851]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_bsqba")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=295001340]
@@ -14,3 +19,12 @@ texture = ExtResource("1_xetfi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1083112232]
 shape = SubResource("RectangleShape2D_yhemn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=139643210]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=904933254]
+light_mask = 2
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_bsqba")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

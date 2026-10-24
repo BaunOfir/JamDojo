@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bgmr81r1v78cq" path="res://Scene_Prefab/Aceite.tscn" id="3_j4t1y"]
 [ext_resource type="Script" uid="uid://bbnlq06pwigll" path="res://Scene_Prefab/nemesis.gd" id="4_d3u1b"]
 [ext_resource type="PackedScene" uid="uid://4qigrbu26gqk" path="res://Scene_Prefab/nemesis.tscn" id="4_l0yyv"]
+[ext_resource type="PackedScene" uid="uid://556v0wdmk06d" path="res://Scene_Prefab/pista.tscn" id="6_mbxck"]
+[ext_resource type="PackedScene" uid="uid://x1mcqjayf8ls" path="res://Scene_Prefab/pista_2.tscn" id="7_88tj3"]
+[ext_resource type="PackedScene" uid="uid://bsu8f75xci6j7" path="res://Scene_Prefab/pista_3.tscn" id="8_78fos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4t1y"]
 texture = ExtResource("2_kgmde")
@@ -45,3 +48,56 @@ script = ExtResource("4_d3u1b")
 
 [node name="Area2D" parent="." unique_id=1802136239 instance=ExtResource("3_j4t1y")]
 position = Vector2(472, 150)
+
+[node name="notas" type="CanvasLayer" parent="." unique_id=271190861]
+unique_name_in_owner = true
+
+[node name="UI" type="ColorRect" parent="notas" unique_id=614608957]
+offset_left = 0.99999976
+offset_top = 655.0
+offset_right = 40.033543
+offset_bottom = 914.9918
+scale = Vector2(29.69241, -2.5091841)
+color = Color(0.35686275, 0.35686275, 0.35686275, 0.39215687)
+
+[node name="carta1" type="ColorRect" parent="notas/UI" unique_id=1402642529]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 0.4041437
+offset_top = 93.655945
+offset_right = 5.404144
+offset_bottom = 143.65594
+scale = Vector2(2.4399986, 2.4399986)
+color = Color(0.42352942, 0.42352942, 0.42352942, 0.6431373)
+
+[node name="carta2" type="ColorRect" parent="notas/UI" unique_id=1047206850]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 13.067312
+offset_top = 92.858864
+offset_right = 17.924812
+offset_bottom = 141.63263
+scale = Vector2(2.5999975, 2.5999975)
+color = Color(0.40784314, 0.40784314, 0.40784314, 0.5411765)
+
+[node name="carta3" type="ColorRect" parent="notas/UI" unique_id=501536363]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 26.909233
+offset_top = 221.18744
+offset_right = 29.35245
+offset_bottom = 247.95781
+scale = Vector2(4.4524097, -4.555485)
+color = Color(0.35686275, 0.35686275, 0.35686275, 0.39215687)
+
+[node name="Pista" parent="." unique_id=1886974355 instance=ExtResource("6_mbxck")]
+position = Vector2(240, 235)
+
+[node name="pista2" parent="." unique_id=1096799424 instance=ExtResource("7_88tj3")]
+position = Vector2(250, 370)
+
+[node name="pista3" parent="." unique_id=2005017042 instance=ExtResource("8_78fos")]
+position = Vector2(291, 89)

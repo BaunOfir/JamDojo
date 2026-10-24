@@ -12,9 +12,11 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	#Si el jugador esta prendido, lo persigue, sino sigue con su movimiento random
 	if is_instance_valid(player) and player.prendido:
+		set_collision_layer_value(1,true)
 		var direction_to_player = global_position.direction_to(player.global_position)
 		velocity = direction_to_player * SPEED
 	else:
+		set_collision_layer_value(1,false)
 		if is_instance_valid(player_area):
 			if not player_area.overlaps_body(self):
 				_steer_back_into_area()
@@ -35,3 +37,9 @@ func set_player_area(area: Area2D) -> void:
 	player_area = area
 	if area.get_parent() is CharacterBody2D:
 		player = area.get_parent()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player")and player.prendido:
+		print("perdiste")
+		get_tree().reload_current_scene()

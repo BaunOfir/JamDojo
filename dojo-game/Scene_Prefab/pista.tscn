@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://556v0wdmk06d"]
+
+[ext_resource type="Script" uid="uid://b57g58rv38cei" path="res://Script/Pista1.gd" id="1_ec2rm"]
+[ext_resource type="Texture2D" uid="uid://bob4bj7t41k6b" path="res://Asset/Asset/PNG/Default size/Crates/crate_02.png" id="2_jxqy7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sp843"]
+
+[node name="Pista" type="Area2D" unique_id=1886974355]
+script = ExtResource("1_ec2rm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=516765411]
+texture = ExtResource("2_jxqy7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1906200162]
+shape = SubResource("CircleShape2D_sp843")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
