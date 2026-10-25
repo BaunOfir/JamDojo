@@ -49,4 +49,6 @@ offset_top = -185.0
 offset_right = -17.0
 offset_bottom = -158.0
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1687376720]
+
 [connection signal="timeout" from="Timer_luz" to="." method="_on_timer_luz_timeout"]
